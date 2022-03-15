@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %} Login Page{% endblock %}
+{% block content %}
+    {% if user.is_authenticated %} 
+        <ul>
+            <li>Nome Completo: {{user.full_name}}</li>
+            <li>Data de Nascimento: {{user.date_of_birth}} ({{user.get_idade}})</li>
+            <li>CPF: {{ user }}</li><!-- A definicao de __str__ é o proprio CPF formatado -->
+        </ul>
+    {%else%}
+        <a href="{% url 'logout' %}"> <button type="button" >Entrar</button> </a>
+        <a href="{% url 'login' %}"> <button type="button">Cadastre-se</button></a>
+    {% endif %}
+
+{% endblock %}

@@ -4,6 +4,7 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseU
 
 from .validators import cpf_validator, date_of_birth_validator, group_validator
 
+from datetime import date
 
 class UserManager(BaseUserManager):
     def create_user(self, full_name, cpf, date_of_birth, password, **other_fields):
@@ -87,7 +88,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         null=True,
         on_delete=models.CASCADE,
     )
-    
+
     #TODO: Aptitude de ser cadastrado deve ser uma função
     aptitude = models.BooleanField(default=False)
     
@@ -105,6 +106,13 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return f'{self.cpf[:3]}.{self.cpf[3:6]}.{self.cpf[6:9]}-{self.cpf[-2:]}'
+
+    def get_idade(self):
+        today = date.today()
+        return today.year - self.date_of_birth.year - ((today.month, today.day) < (self.date_of_birth.month, self.date_of_birth.day))
+    
+    def get_formatted_CPF(self):
+        return 
 
     class Meta:
         verbose_name = "Usuário"
