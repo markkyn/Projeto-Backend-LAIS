@@ -1,15 +1,39 @@
 {% extends 'base.html' %}
-{% block title %} Login Page{% endblock %}
+{% block title %}Login Page{% endblock %}
 {% block content %}
-    {% if user.is_authenticated %} 
-        <ul>
-            <li>Nome Completo: {{user.full_name}}</li>
-            <li>Data de Nascimento: {{user.date_of_birth}} ({{user.get_idade}})</li>
-            <li>CPF: {{ user }}</li><!-- A definicao de __str__ é o proprio CPF formatado -->
-        </ul>
-    {%else%}
-        <a href="{% url 'logout' %}"> <button type="button" >Entrar</button> </a>
-        <a href="{% url 'login' %}"> <button type="button">Cadastre-se</button></a>
+    
+    <!-- FORMS AUTHENTICATION -->
+    {% if form.errors %}
+        <strong>
+            o CPF ou Senha são inválidas. Por Favor , tente novamente.
+        </strong>
     {% endif %}
-
+    
+    {% if next %}
+        {% if user.is_authenticated %}
+            <p>
+                Você não tem acesso a essa Página
+            </p>
+        {% else %}
+            <p>
+                Por favor , Entre em sua conta para ver essa página
+            </p>
+        {% endif %}
+    {% endif %}
+    <!-- FORMS -->
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>{{ form.username.label_tag }}</td>
+                <td>{{ form.username }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.password.label_tag }}</td>
+                <td>{{ form.password }}</td>
+            </tr>
+        </table>
+        <input type="submit" value="Entrar" />
+        <input type="hidden" name="next" value="{{ next }}" />
+    </form>
 {% endblock %}

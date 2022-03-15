@@ -111,9 +111,9 @@ class User(AbstractBaseUser, PermissionsMixin):
         today = date.today()
         return today.year - self.date_of_birth.year - ((today.month, today.day) < (self.date_of_birth.month, self.date_of_birth.day))
     
-    def get_formatted_CPF(self):
-        return 
-
+    def is_able_to_schedule(self):
+        return ( self.get_idade() >= 18 and not self.had_covid_last_month ) #TODO: GROUPS
+    
     class Meta:
         verbose_name = "Usuário"
         verbose_name_plural = "Usuários"
