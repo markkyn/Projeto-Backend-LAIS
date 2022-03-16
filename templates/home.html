@@ -1,20 +1,30 @@
 {% extends 'base.html' %}
-
-{% block title %} Home {% endblock %}
-
-{% block content %}
-    {% if user.is_authenticated %} 
-        <ul>
-            <li>Nome Completo: {{user.full_name}}</li>
-            <li>Data de Nascimento: {{user.date_of_birth}} ( {{user.get_idade}} anos )</li>
-            <li>CPF: {{ user }}</li><!-- A definicao de __str__ é o proprio CPF formatado -->
-        </ul>
-        {% if user.is_able_to_schedule %}
-            <a href="{% url 'logout' %}"> <button type="button" > Realizar Agendamento </button> </a>
-        {% endif %}
-    {%else%}
-        <a href="{% url 'logout' %}"> <button type="button" >Entrar </button> </a>
-        <a href="{% url 'login' %}"> <button type="button"> Cadastre-se </button></a>
+{% block title %}Página Inicial{% endblock %}
+{% block navItems %}
+    {% if user.is_authenticated %}
+        <li class="nav-item active">
+            <a class="nav-link" href="{% url 'logout' %}">Encerrar Sessão</a>
+        </li>
     {% endif %}
-
+{% endblock %}
+{% block content %}
+    {% if user.is_authenticated %}
+        <div class="container">
+            <ul>
+                <li>Nome Completo: {{ user.full_name }}</li>
+                <li>Data de Nascimento: {{ user.date_of_birth }} ( {{ user.get_idade }} anos )</li>
+                <li>CPF: {{ user }}</li>
+                <!-- A definicao de __str__ é o proprio CPF formatado -->
+            </ul>
+            {% if user.is_able_to_schedule %}
+                <a href="{% url 'logout' %}" class="btn btn-primary">Realizar Agendamento</a>
+            {% endif %}
+        </div>
+    {% else %}
+        <h2>Verificamos que você não está autenticado no nosso sistema</h2>
+        <div class="container">
+            <a href="{% url 'login' %}" class = "btn btn-primary mx-auto">Entrar</a>
+            <a href="{% url 'login' %}" class= "btn btn-primary mx-auto">Cadastrar-se</a>
+        </div>
+    {% endif %}
 {% endblock %}
