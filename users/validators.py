@@ -58,7 +58,7 @@ def is_valid_cpf(cpf):  # Only Numbers
         return False
 
 # Date of Birth VALIDATION
-def date_of_birth_validator(value):
+def age_validator(value):
     if age(value,date.today()) < 18:
         raise ValidationError(
             _("%(value)s Idade Inválida ( menores de 18 anos não são aceitos )"),

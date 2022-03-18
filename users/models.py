@@ -2,7 +2,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 
-from .validators import cpf_validator, date_of_birth_validator, group_validator
+from .validators import cpf_validator, age_validator, group_validator
 
 from datetime import date
 
@@ -25,7 +25,6 @@ class UserManager(BaseUserManager):
         other_fields.setdefault('is_superuser', True)
         other_fields.setdefault('is_staff', True)
         other_fields.setdefault('is_active', True)
-        other_fields.setdefault('group', None)
         other_fields.setdefault('had_covid_last_month', False)
 
         # Verifiers
@@ -39,7 +38,7 @@ class Group(models.Model):
     nome = models.CharField(max_length=255)
     visivel = models.BooleanField(default=True)
     fase = models.IntegerField(null=True, blank = True)
-    grupo_pai = models.ForeignKey('users.Group', blank=True, null=True, related_name='children', on_delete=models.CASCADE)
+    grupo_pai =  models.CharField(max_length=255, null = True, blank=True)
 
     codigo_si_pni = models.CharField(max_length=255, null = True, blank=True)
     criado_em = models.DateTimeField()
@@ -48,9 +47,14 @@ class Group(models.Model):
     def __str__(self):
         return self.nome
 
+    class Meta:
+        verbose_name = "Grupo de Atendimento"
+        verbose_name_plural = "Grupos de Atendimento"
+
 
 class User(AbstractBaseUser, PermissionsMixin):
-    username = None
+    
+    
     cpf = models.CharField(
         verbose_name = "CPF",
         max_length=11,
@@ -68,7 +72,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     date_of_birth = models.DateField(
         verbose_name = "Data de Nascimento",
         null=True,
-        validators=[ date_of_birth_validator ]
+        validators=[ age_validator ]
     )
 
     had_covid_last_month = models.BooleanField(
@@ -77,16 +81,14 @@ class User(AbstractBaseUser, PermissionsMixin):
         null=True
     )
 
-    group = models.ForeignKey(
-        "users.Group", 
-        related_name="group",
-        null=True,
-        on_delete=models.CASCADE,
+    groups = models.ManyToManyField(
+        Group, 
+        related_name="groups",
+        blank=True
     )
-
-    #TODO: Aptitude de ser cadastrado deve ser uma função
-    aptitude = models.BooleanField(default=False)
     
+    username = None
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -94,20 +96,21 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=False)
 
-    USERNAME_FIELD = 'cpf'
-    REQUIRED_FIELDS = ['full_name', 'date_of_birth']
-
     objects = UserManager()
 
-    def __str__(self):
-        return f'{self.cpf[:3]}.{self.cpf[3:6]}.{self.cpf[6:9]}-{self.cpf[-2:]}'
+    USERNAME_FIELD = 'cpf'
+    REQUIRED_FIELDS = ['full_name', 'date_of_birth']
 
     def get_idade(self):
         today = date.today()
         return today.year - self.date_of_birth.year - ((today.month, today.day) < (self.date_of_birth.month, self.date_of_birth.day))
     
     def is_able_to_schedule(self):
-        return ( self.get_idade() >= 18 and not self.had_covid_last_month ) #TODO: GROUPS
+        return ( self.get_idade() >= 18 and not self.had_covid_last_month )
+    
+    def __str__(self):
+        return f'{self.cpf[:3]}.{self.cpf[3:6]}.{self.cpf[6:9]}-{self.cpf[-2:]}'
+    
     
     class Meta:
         verbose_name = "Usuário"

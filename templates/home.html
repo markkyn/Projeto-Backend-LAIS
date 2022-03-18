@@ -3,7 +3,7 @@
 {% block navItems %}
     {% if user.is_authenticated %}
         <li class="nav-item active">
-            <a class="nav-link" href="{% url 'logout' %}">Encerrar Sessão</a>
+            <a class="nav-link" href="{%url 'pages:logout'%}">Encerrar Sessão</a>
         </li>
     {% endif %}
 {% endblock %}
@@ -15,7 +15,7 @@
                 <li>Data de Nascimento: {{ user.date_of_birth }} ( {{ user.get_idade }} anos )</li>
                 <li>CPF: {{ user }}</li>
                 <li>Está apto para realizar agendamento: 
-                    {%if user.is_able_to_schedule %}
+                    {% if user.is_able_to_schedule %}
                         Sim
                     {% else %}
                         Não
@@ -32,7 +32,7 @@
     {% else %}
         <h2>Verificamos que você não está autenticado no nosso sistema</h2>
         <div class="container">
-            <a href="{% url 'login' %}" class = "btn btn-primary mx-auto">Entrar</a>
+            <a href="{% url 'pages:login' %}" class = "btn btn-primary mx-auto">Entrar</a>
             <a href="{% url 'pages:signup' %}" class= "btn btn-primary mx-auto">Cadastrar-se</a>
         </div>
     {% endif %}
