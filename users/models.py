@@ -35,20 +35,15 @@ class UserManager(BaseUserManager):
         return (self.create_user(full_name, cpf, date_of_birth, password, **other_fields))
 
 # GRUPOS_DE_ATENDIMENTO MODEL
-
-
 class Group(models.Model):
-    user = models.OneToOneField(
-        "users.User", on_delete=models.CASCADE, related_name='user')
-    grupo_pai = models.ForeignKey(
-        'self', blank=True, null=True, related_name='children', on_delete=models.CASCADE)
     nome = models.CharField(max_length=255)
     visivel = models.BooleanField(default=True)
-    fase = models.IntegerField()
+    fase = models.IntegerField(null=True, blank = True)
+    grupo_pai = models.ForeignKey('users.Group', blank=True, null=True, related_name='children', on_delete=models.CASCADE)
 
-    codigo_si_pni = models.CharField(max_length=255)
-    criado_em = models.DateTimeField(auto_now_add=True)
-    atualizado_em = models.DateTimeField(auto_now=True)
+    codigo_si_pni = models.CharField(max_length=255, null = True, blank=True)
+    criado_em = models.DateTimeField()
+    atualizado_em = models.DateTimeField()
 
     def __str__(self):
         return self.nome

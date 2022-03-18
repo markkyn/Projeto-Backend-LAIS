@@ -14,17 +14,26 @@
                 <li>Nome Completo: {{ user.full_name }}</li>
                 <li>Data de Nascimento: {{ user.date_of_birth }} ( {{ user.get_idade }} anos )</li>
                 <li>CPF: {{ user }}</li>
+                <li>Está apto para realizar agendamento: 
+                    {%if user.is_able_to_schedule %}
+                        Sim
+                    {% else %}
+                        Não
+                    {%endif%}        
+                </li>
                 <!-- A definicao de __str__ é o proprio CPF formatado -->
             </ul>
             {% if user.is_able_to_schedule %}
-                <a href="{% url 'logout' %}" class="btn btn-primary">Realizar Agendamento</a>
+                <a href="" class="btn btn-primary">
+                    Realizar Agendamento
+                </a>
             {% endif %}
         </div>
     {% else %}
         <h2>Verificamos que você não está autenticado no nosso sistema</h2>
         <div class="container">
             <a href="{% url 'login' %}" class = "btn btn-primary mx-auto">Entrar</a>
-            <a href="{% url 'login' %}" class= "btn btn-primary mx-auto">Cadastrar-se</a>
+            <a href="{% url 'pages:signup' %}" class= "btn btn-primary mx-auto">Cadastrar-se</a>
         </div>
     {% endif %}
 {% endblock %}

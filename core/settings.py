@@ -14,7 +14,7 @@ SECRET_KEY = 'ny2mw#305nh%-kxp#g=8!1va_lth2#=3aauzj3x^l)o-c(5amv'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+DATE_INPUT_FORMATS = ['%d-%m-%Y']
 
 # Application definition
 
@@ -26,6 +26,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Built-In Django Apps
+    'django.contrib.sitemaps',
 
     # MyApps
     'users.apps.UsersConfig',
@@ -112,3 +114,5 @@ STATICFILES_DIRS = [
 ]
 AUTH_USER_MODEL = 'users.User'
 LOGIN_REDIRECT_URL = '/'
+
+FIXTURE_DIRS = [BASE_DIR / 'fixtures']
