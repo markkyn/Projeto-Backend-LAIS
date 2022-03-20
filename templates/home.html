@@ -1,11 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}Página Inicial{% endblock %}
 {% block navItems %}
-    {% if user.is_authenticated %}
-        <li class="nav-item active">
-            <a class="nav-link" href="{%url 'pages:logout'%}">Encerrar Sessão</a>
-        </li>
-    {% endif %}
+    
 {% endblock %}
 {% block content %}
     {% if user.is_authenticated %}
@@ -24,7 +20,7 @@
                 <!-- A definicao de __str__ é o proprio CPF formatado -->
             </ul>
             {% if user.is_able_to_schedule %}
-                <a href="" class="btn btn-primary">
+                <a href="{% url 'pages:agendamento' %}" class="btn btn-primary">
                     Realizar Agendamento
                 </a>
             {% endif %}

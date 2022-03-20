@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
-
+from django.db.models import Q
 from .validators import cpf_validator, age_validator, group_validator
 
 from datetime import date
@@ -106,7 +106,14 @@ class User(AbstractBaseUser, PermissionsMixin):
         return today.year - self.date_of_birth.year - ((today.month, today.day) < (self.date_of_birth.month, self.date_of_birth.day))
     
     def is_able_to_schedule(self):
-        return ( self.get_idade() >= 18 and not self.had_covid_last_month )
+        return ( 
+            self.get_idade() >= 18
+            and not self.had_covid_last_month 
+            and not self.groups.filter( Q(nome = "População Privada de Liberdade") 
+                                      | Q(nome = "Pessoas ACAMADAS de 80 anos ou mais")
+                                      | Q(nome = "Pessoas com Deficiência Institucionalizadas")
+                                      ).exists()
+        )
     
     def __str__(self):
         return f'{self.cpf[:3]}.{self.cpf[3:6]}.{self.cpf[6:9]}-{self.cpf[-2:]}'
