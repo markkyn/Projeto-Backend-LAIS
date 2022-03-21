@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Login Page{% endblock %}
+{% block content %}
+<form method="POST" action="{% url 'pages:login' %}">
+    {% csrf_token %}
+    
+    {% for field in form %}
+        <b>{{ field.label }}</b>: {{ field }}
+        <br><br>
+    {% endfor %}
+
+    {% if error %}
+        <span style="color: red;">{{ error }}</span>
+        <br><br>
+    {% endif %}
+    
+    <input type="submit" value="Enviar" />
+</form>
+{% endblock %}

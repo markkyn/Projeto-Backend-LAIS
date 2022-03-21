@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% if user.is_authenticated %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Data e Horario de Agendamento</th>
+                    <th scope="col">Dia da Semana</th>
+                    <th scope="col">Agendamento Passou do Horario?</th>
+                    <th scope="col">Estabelecimento</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for exame in agendamento %}
+                    <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td>{{ exame.appointment_date }} - {{ exame.appointment_hour }}</td>
+                        <td>{{ exame.weekday }}</td>
+                        {% if exame.is_expired %}
+                            <td>Agendamento Expirado</td>
+                        {% else %}
+                            <td>Dentro do Horário</td>
+                        {% endif %}
+                        <td>{{ exame.estabelecimento_formated }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>
+            Você não está autenticado
+        </p>
+    {% endif %}
+{% endblock content %}

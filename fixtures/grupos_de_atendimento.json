@@ -1,0 +1,912 @@
+[
+    {
+        "model": "users.Group",
+        "pk": 1,
+        "fields": {
+            "nome": "Pessoas acima de 75 anos",
+            "visivel": "True",
+            "fase": "002",
+            "codigo_si_pni": null,
+            "grupo_pai": null,
+            "criado_em": "2021-01-09T22:15:05.210Z",
+            "atualizado_em": "2021-02-07T20:02:08.062Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 2,
+        "fields": {
+            "nome": "Pessoas entre 60 a 74 anos",
+            "visivel": "True",
+            "fase": "002",
+            "codigo_si_pni": null,
+            "grupo_pai": null,
+            "criado_em": "2021-01-09T22:15:05.216Z",
+            "atualizado_em": "2021-02-07T20:01:54.695Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 3,
+        "fields": {
+            "nome": "Forças de Segurança e Salvamento",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": null,
+            "grupo_pai": null,
+            "criado_em": "2021-01-09T22:15:05.223Z",
+            "atualizado_em": "2021-02-07T11:41:49.109Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 4,
+        "fields": {
+            "nome": "Funcionário do Sistema de Privação de Liberdade",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "001401",
+            "grupo_pai": null,
+            "criado_em": "2021-01-09T22:15:05.225Z",
+            "atualizado_em": "2021-01-09T22:15:05.225Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 5,
+        "fields": {
+            "nome": "Trabalhadores da Saúde",
+            "visivel": "True",
+            "fase": "001",
+            "codigo_si_pni": null,
+            "grupo_pai": null,
+            "criado_em": "2021-01-09T22:15:05.226Z",
+            "atualizado_em": "2021-02-07T20:01:48.400Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 6,
+        "fields": {
+            "nome": "Pessoas acima de 60 anos institucionalizadas",
+            "visivel": "True",
+            "fase": "001",
+            "codigo_si_pni": "000301",
+            "grupo_pai": null,
+            "criado_em": "2021-01-09T22:15:05.228Z",
+            "atualizado_em": "2021-02-07T20:01:42.319Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 7,
+        "fields": {
+            "nome": "Pessoas em Situação de Rua",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "001201",
+            "grupo_pai": null,
+            "criado_em": "2021-01-09T22:15:05.229Z",
+            "atualizado_em": "2021-01-09T22:15:05.229Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 8,
+        "fields": {
+            "nome": "Trabalhadores da educação",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": null,
+            "grupo_pai": null,
+            "criado_em": "2021-01-09T22:15:05.232Z",
+            "atualizado_em": "2021-02-07T11:46:22.332Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 9,
+        "fields": {
+            "nome": "Caminhoneiro",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "001002",
+            "grupo_pai": null,
+            "criado_em": "2021-01-09T22:15:05.236Z",
+            "atualizado_em": "2021-01-09T22:15:05.236Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 10,
+        "fields": {
+            "nome": "Trabalhadores Portuários",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "001301",
+            "grupo_pai": null,
+            "criado_em": "2021-01-09T22:15:05.239Z",
+            "atualizado_em": "2021-01-09T22:15:05.239Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 11,
+        "fields": {
+            "nome": "Pessoas de 60 a 64 anos",
+            "visivel": "True",
+            "fase": "002",
+            "codigo_si_pni": "000201",
+            "grupo_pai": "5",
+            "criado_em": "2021-02-06T19:37:29.054Z",
+            "atualizado_em": "2021-02-07T20:01:33.299Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 12,
+        "fields": {
+            "nome": "Pessoas de 65 a 69 anos",
+            "visivel": "True",
+            "fase": "002",
+            "codigo_si_pni": "000202",
+            "grupo_pai": "5",
+            "criado_em": "2021-02-06T19:39:21.630Z",
+            "atualizado_em": "2021-02-07T20:01:27.457Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 13,
+        "fields": {
+            "nome": "Pessoas de 70 a 74 anos",
+            "visivel": "True",
+            "fase": "002",
+            "codigo_si_pni": "000203",
+            "grupo_pai": "5",
+            "criado_em": "2021-02-06T19:40:54.154Z",
+            "atualizado_em": "2021-02-07T20:01:22.378Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 14,
+        "fields": {
+            "nome": "Pessoas de 75 a 79 anos",
+            "visivel": "True",
+            "fase": "002",
+            "codigo_si_pni": "000204",
+            "grupo_pai": "2",
+            "criado_em": "2021-02-06T19:42:10.295Z",
+            "atualizado_em": "2021-02-07T20:01:16.036Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 15,
+        "fields": {
+            "nome": "Pessoas de 80 anos ou mais",
+            "visivel": "True",
+            "fase": "002",
+            "codigo_si_pni": "000205",
+            "grupo_pai": "2",
+            "criado_em": "2021-02-06T19:43:14.530Z",
+            "atualizado_em": "2021-02-07T20:00:35.646Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 16,
+        "fields": {
+            "nome": "Síndrome de Down",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000110",
+            "grupo_pai": null,
+            "criado_em": "2021-02-06T19:44:49.331Z",
+            "atualizado_em": "2021-02-06T19:44:49.331Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 17,
+        "fields": {
+            "nome": "Marinha do Brasil - MB",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000401",
+            "grupo_pai": "9",
+            "criado_em": "2021-02-06T19:44:49.350Z",
+            "atualizado_em": "2021-02-06T19:44:49.351Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 18,
+        "fields": {
+            "nome": "Exército Brasileiro - EB",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000402",
+            "grupo_pai": "9",
+            "criado_em": "2021-02-06T19:44:49.369Z",
+            "atualizado_em": "2021-02-06T19:44:49.369Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 19,
+        "fields": {
+            "nome": "Força Aérea Brasileira - FAB",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000403",
+            "grupo_pai": "9",
+            "criado_em": "2021-02-06T19:44:49.386Z",
+            "atualizado_em": "2021-02-06T19:44:49.386Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 20,
+        "fields": {
+            "nome": "Bombeiro Civil",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000501",
+            "grupo_pai": "9",
+            "criado_em": "2021-02-06T19:44:49.403Z",
+            "atualizado_em": "2021-02-06T19:44:49.403Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 21,
+        "fields": {
+            "nome": "Bombeiro Militar",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000502",
+            "grupo_pai": "9",
+            "criado_em": "2021-02-06T19:44:49.420Z",
+            "atualizado_em": "2021-02-06T19:44:49.420Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 22,
+        "fields": {
+            "nome": "Guarda Municipal",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000503",
+            "grupo_pai": "9",
+            "criado_em": "2021-02-06T19:44:49.437Z",
+            "atualizado_em": "2021-02-06T19:44:49.437Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 23,
+        "fields": {
+            "nome": "Policial Rodoviário Federal",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000504",
+            "grupo_pai": "9",
+            "criado_em": "2021-02-06T19:44:49.455Z",
+            "atualizado_em": "2021-02-06T19:44:49.455Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 24,
+        "fields": {
+            "nome": "Policial Civil",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000505",
+            "grupo_pai": "9",
+            "criado_em": "2021-02-06T19:44:49.478Z",
+            "atualizado_em": "2021-02-06T19:44:49.478Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 25,
+        "fields": {
+            "nome": "Policial Federal",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000506",
+            "grupo_pai": "9",
+            "criado_em": "2021-02-06T19:44:49.496Z",
+            "atualizado_em": "2021-02-06T19:44:49.496Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 26,
+        "fields": {
+            "nome": "Policial Militar",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000507",
+            "grupo_pai": "9",
+            "criado_em": "2021-02-06T19:44:49.515Z",
+            "atualizado_em": "2021-02-06T19:44:49.515Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 27,
+        "fields": {
+            "nome": "Quilombola",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000601",
+            "grupo_pai": null,
+            "criado_em": "2021-02-06T19:44:49.533Z",
+            "atualizado_em": "2021-02-06T19:44:49.533Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 28,
+        "fields": {
+            "nome": "Povos indígenas em terras indígenas",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000701",
+            "grupo_pai": null,
+            "criado_em": "2021-02-06T19:44:49.577Z",
+            "atualizado_em": "2021-02-06T19:44:49.577Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 29,
+        "fields": {
+            "nome": "Ensino Básico",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000801",
+            "grupo_pai": "16",
+            "criado_em": "2021-02-06T19:44:49.594Z",
+            "atualizado_em": "2021-02-06T19:44:49.594Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 30,
+        "fields": {
+            "nome": "Ensino Superior",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000802",
+            "grupo_pai": "16",
+            "criado_em": "2021-02-06T19:44:49.611Z",
+            "atualizado_em": "2021-02-06T19:44:49.611Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 31,
+        "fields": {
+            "nome": "Auxiliar de Veterinário",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000901",
+            "grupo_pai": "11",
+            "criado_em": "2021-02-06T19:44:49.628Z",
+            "atualizado_em": "2021-02-06T19:44:49.628Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 32,
+        "fields": {
+            "nome": "Biólogo",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000902",
+            "grupo_pai": "11",
+            "criado_em": "2021-02-06T19:44:49.645Z",
+            "atualizado_em": "2021-02-06T19:44:49.645Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 33,
+        "fields": {
+            "nome": "Biomédico",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000903",
+            "grupo_pai": "11",
+            "criado_em": "2021-02-06T19:44:49.662Z",
+            "atualizado_em": "2021-02-06T19:44:49.662Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 34,
+        "fields": {
+            "nome": "Cozinheiro e Auxiliares",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000904",
+            "grupo_pai": "11",
+            "criado_em": "2021-02-06T19:44:49.679Z",
+            "atualizado_em": "2021-02-06T19:44:49.679Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 35,
+        "fields": {
+            "nome": "Cuidador de Idosos",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000905",
+            "grupo_pai": "11",
+            "criado_em": "2021-02-06T19:44:49.701Z",
+            "atualizado_em": "2021-02-06T19:44:49.701Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 36,
+        "fields": {
+            "nome": "Doula/Parteira",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000906",
+            "grupo_pai": "11",
+            "criado_em": "2021-02-06T19:44:49.719Z",
+            "atualizado_em": "2021-02-06T19:44:49.719Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 37,
+        "fields": {
+            "nome": "Enfermeiro(a)",
+            "visivel": "True",
+            "fase": "001",
+            "codigo_si_pni": "000907",
+            "grupo_pai": "11",
+            "criado_em": "2021-02-06T19:44:49.736Z",
+            "atualizado_em": "2021-02-07T20:00:28.303Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 38,
+        "fields": {
+            "nome": "Farmacêutico",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000908",
+            "grupo_pai": "11",
+            "criado_em": "2021-02-06T19:44:49.759Z",
+            "atualizado_em": "2021-02-06T19:44:49.759Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 39,
+        "fields": {
+            "nome": "Fisioterapeutas",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000909",
+            "grupo_pai": "11",
+            "criado_em": "2021-02-06T19:44:49.802Z",
+            "atualizado_em": "2021-02-06T19:44:49.802Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 40,
+        "fields": {
+            "nome": "Fonoaudiólogo",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000910",
+            "grupo_pai": "11",
+            "criado_em": "2021-02-06T19:44:49.826Z",
+            "atualizado_em": "2021-02-06T19:44:49.826Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 41,
+        "fields": {
+            "nome": "Funcionário do Sistema Funerário que tenham contato com cadáveres potencialmente contaminados",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000911",
+            "grupo_pai": "11",
+            "criado_em": "2021-02-06T19:44:49.843Z",
+            "atualizado_em": "2021-02-06T19:44:49.843Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 42,
+        "fields": {
+            "nome": "Médico",
+            "visivel": "True",
+            "fase": "001",
+            "codigo_si_pni": "000912",
+            "grupo_pai": "11",
+            "criado_em": "2021-02-06T19:44:49.861Z",
+            "atualizado_em": "2021-02-08T03:35:10.127Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 43,
+        "fields": {
+            "nome": "Médico Veterinário",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000913",
+            "grupo_pai": "11",
+            "criado_em": "2021-02-06T19:44:49.878Z",
+            "atualizado_em": "2021-02-06T19:44:49.878Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 44,
+        "fields": {
+            "nome": "Motorista de Ambulância",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000914",
+            "grupo_pai": "11",
+            "criado_em": "2021-02-06T19:44:49.895Z",
+            "atualizado_em": "2021-02-06T19:44:49.895Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 45,
+        "fields": {
+            "nome": "Nutricionista",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000915",
+            "grupo_pai": "11",
+            "criado_em": "2021-02-06T19:44:49.912Z",
+            "atualizado_em": "2021-02-06T19:44:49.912Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 46,
+        "fields": {
+            "nome": "Odontologista",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000916",
+            "grupo_pai": "11",
+            "criado_em": "2021-02-06T19:44:49.929Z",
+            "atualizado_em": "2021-02-06T19:44:49.929Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 47,
+        "fields": {
+            "nome": "Pessoal da Limpeza",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000917",
+            "grupo_pai": "11",
+            "criado_em": "2021-02-06T19:44:49.946Z",
+            "atualizado_em": "2021-02-06T19:44:49.946Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 48,
+        "fields": {
+            "nome": "Profissionais de Educação Física",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000918",
+            "grupo_pai": "11",
+            "criado_em": "2021-02-06T19:44:49.963Z",
+            "atualizado_em": "2021-02-06T19:44:49.963Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 49,
+        "fields": {
+            "nome": "Psicólogo",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000919",
+            "grupo_pai": "11",
+            "criado_em": "2021-02-06T19:44:49.980Z",
+            "atualizado_em": "2021-02-06T19:44:49.980Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 50,
+        "fields": {
+            "nome": "Recepcionista",
+            "visivel": "True",
+            "fase": "001",
+            "codigo_si_pni": "000920",
+            "grupo_pai": "11",
+            "criado_em": "2021-02-06T19:44:49.997Z",
+            "atualizado_em": "2021-02-08T03:35:54.511Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 51,
+        "fields": {
+            "nome": "Segurança",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000921",
+            "grupo_pai": "11",
+            "criado_em": "2021-02-06T19:44:50.013Z",
+            "atualizado_em": "2021-02-06T19:44:50.013Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 52,
+        "fields": {
+            "nome": "Assistente Social",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000922",
+            "grupo_pai": "11",
+            "criado_em": "2021-02-06T19:44:50.030Z",
+            "atualizado_em": "2021-02-06T19:44:50.030Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 53,
+        "fields": {
+            "nome": "Técnico de Enfermagem",
+            "visivel": "True",
+            "fase": "001",
+            "codigo_si_pni": "000923",
+            "grupo_pai": "11",
+            "criado_em": "2021-02-06T19:44:50.057Z",
+            "atualizado_em": "2021-02-07T20:00:15.598Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 54,
+        "fields": {
+            "nome": "Técnico de Veterinário",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000924",
+            "grupo_pai": "11",
+            "criado_em": "2021-02-06T19:44:50.074Z",
+            "atualizado_em": "2021-02-06T19:44:50.074Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 55,
+        "fields": {
+            "nome": "Terapeuta Ocupacional",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000925",
+            "grupo_pai": "11",
+            "criado_em": "2021-02-06T19:44:50.092Z",
+            "atualizado_em": "2021-02-06T19:44:50.092Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 56,
+        "fields": {
+            "nome": "Outros",
+            "visivel": "True",
+            "fase": "001",
+            "codigo_si_pni": "000926",
+            "grupo_pai": "11",
+            "criado_em": "2021-02-06T19:44:50.110Z",
+            "atualizado_em": "2021-02-08T03:34:47.013Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 57,
+        "fields": {
+            "nome": "Auxiliar de Enfermagem",
+            "visivel": "True",
+            "fase": "001",
+            "codigo_si_pni": "000927",
+            "grupo_pai": "11",
+            "criado_em": "2021-02-06T19:44:50.128Z",
+            "atualizado_em": "2021-02-07T19:59:59.807Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 58,
+        "fields": {
+            "nome": "Técnico de Odontologia",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "000928",
+            "grupo_pai": "11",
+            "criado_em": "2021-02-06T19:44:50.146Z",
+            "atualizado_em": "2021-02-08T03:45:39.217Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 59,
+        "fields": {
+            "nome": "Estudante",
+            "visivel": "True",
+            "fase": "005",
+            "codigo_si_pni": "000929",
+            "grupo_pai": null,
+            "criado_em": "2021-02-06T19:44:50.162Z",
+            "atualizado_em": "2021-02-08T03:34:15.507Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 60,
+        "fields": {
+            "nome": "Aéreo",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "001001",
+            "grupo_pai": null,
+            "criado_em": "2021-02-06T19:44:50.180Z",
+            "atualizado_em": "2021-02-06T19:44:50.180Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 61,
+        "fields": {
+            "nome": "Coletivo Rodoviário Passageiros Urbano e de Longo Curso",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "001003",
+            "grupo_pai": null,
+            "criado_em": "2021-02-06T19:44:50.198Z",
+            "atualizado_em": "2021-02-06T19:44:50.198Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 62,
+        "fields": {
+            "nome": "Ferroviário",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "001004",
+            "grupo_pai": null,
+            "criado_em": "2021-02-06T19:44:50.215Z",
+            "atualizado_em": "2021-02-06T19:44:50.215Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 63,
+        "fields": {
+            "nome": "Metroviário",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "001005",
+            "grupo_pai": null,
+            "criado_em": "2021-02-06T19:44:50.232Z",
+            "atualizado_em": "2021-02-06T19:44:50.232Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 64,
+        "fields": {
+            "nome": "Aquaviário",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "001006",
+            "grupo_pai": null,
+            "criado_em": "2021-02-06T19:44:50.249Z",
+            "atualizado_em": "2021-02-06T19:44:50.249Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 65,
+        "fields": {
+            "nome": "Pessoas com Deficiência Institucionalizadas",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "001101",
+            "grupo_pai": null,
+            "criado_em": "2021-02-06T19:44:50.267Z",
+            "atualizado_em": "2021-02-06T19:44:50.267Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 66,
+        "fields": {
+            "nome": "Pessoas com Deficiências Permanente Grave",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "001102",
+            "grupo_pai": null,
+            "criado_em": "2021-02-06T19:44:50.284Z",
+            "atualizado_em": "2021-02-06T19:44:50.284Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 67,
+        "fields": {
+            "nome": "População Privada de Liberdade",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "001501",
+            "grupo_pai": null,
+            "criado_em": "2021-02-06T19:44:50.310Z",
+            "atualizado_em": "2021-02-06T19:44:50.310Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 68,
+        "fields": {
+            "nome": "Trabalhadores Industriais",
+            "visivel": "True",
+            "fase": null,
+            "codigo_si_pni": "001601",
+            "grupo_pai": null,
+            "criado_em": "2021-02-06T19:44:50.327Z",
+            "atualizado_em": "2021-02-06T19:44:50.327Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 69,
+        "fields": {
+            "nome": "Pessoas ACAMADAS de 75 a 79",
+            "visivel": "True",
+            "fase": "002",
+            "codigo_si_pni": "000204",
+            "grupo_pai": "2",
+            "criado_em": "2021-02-08T14:05:43.187Z",
+            "atualizado_em": "2021-02-08T14:05:43.187Z"
+        }
+    },
+    {
+        "model": "users.Group",
+        "pk": 70,
+        "fields": {
+            "nome": "Pessoas ACAMADAS de 80 anos ou mais",
+            "visivel": "True",
+            "fase": "002",
+            "codigo_si_pni": "000205",
+            "grupo_pai": "2",
+            "criado_em": "2021-02-08T14:06:35.815Z",
+            "atualizado_em": "2021-02-08T14:06:35.815Z"
+        }
+    }
+]
