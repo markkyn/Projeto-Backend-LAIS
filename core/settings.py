@@ -115,5 +115,6 @@ STATICFILES_DIRS = [
 ]
 AUTH_USER_MODEL = 'users.User'
 LOGIN_REDIRECT_URL = '/'
+LOGIN_URL= '/login'
 
 FIXTURE_DIRS = [BASE_DIR / 'fixtures']
