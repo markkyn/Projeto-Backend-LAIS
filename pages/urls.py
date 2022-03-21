@@ -7,6 +7,8 @@ from .views.authentication.LoginView import LoginView, LogoutView
 from .views.agendamento.AgendamentoView import AgendamentoView
 from .views.agendamento.ListagemView import ListagemView
 
+from .views.utils import dropdownView
+
 app_name = 'pages'
 
 urlpatterns = [
@@ -17,4 +19,7 @@ urlpatterns = [
     path('agendamento/', AgendamentoView.as_view(), name="agendamento"),
     path('listagem/', ListagemView.as_view(), name="listagem"),
     
+    #UTILS
+    path('ajax/carregar-horarios/', dropdownView.send_horarios_data, name="ajax_carregar_horarios" ) #Dependent DropDownList Field
+
 ]

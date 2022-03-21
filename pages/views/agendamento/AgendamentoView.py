@@ -7,6 +7,7 @@ class AgendamentoView(FormView):
     form_class = AgendamentoForm
     success_url= '/listagem/'
     
-    def form_valid(self, form):
+    #Por conta do DropDownList, a validação fica por conta do AgendamentoForm 
+    def form_invalid(self, form):
         form.agendar(self.request)
         return super().form_valid(form)

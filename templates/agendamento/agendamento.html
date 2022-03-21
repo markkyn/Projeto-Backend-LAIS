@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}
     AutoCadastro
 {% endblock title %}
 {% block content %}
-    <form method="post">
+    <form method="post"
+          id="agendamentoForm_id"
+          horarios-data="{% url 'pages:ajax_carregar_horarios' %}"
+          novalidate>
         {% csrf_token %}
         {% for field in form %}
             <p>
@@ -20,4 +24,8 @@
         {% endfor %}
         <button type="submit">Sign up</button>
     </form>
+    {% block script %}
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src= "{% static 'js/utils/dropdownJS.js' %}"></script>
+    {% endblock %}
 {% endblock content %}
