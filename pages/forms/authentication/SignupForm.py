@@ -1,5 +1,3 @@
-from cProfile import label
-from urllib import request
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from pages.form_validators import cpf_already_registered  

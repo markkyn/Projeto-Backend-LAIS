@@ -41,16 +41,27 @@ def is_valid_cpf(cpf):  # Only Numbers
         for i in range(len(cpf) - 2):
             aux += int(cpf[i]) * (10 - i)
 
-        if((aux * 10) % 11 != int(cpf[9])):
-            return False
+        resto = (aux * 10) % 11
+        if resto == 10:
+            resto = 0
 
+        if(resto != int(cpf[9])):
+            return False
+        print("Primeiro Digito OK")
         # Verificacao do Segundo Digito
         aux = 0
         for i in range(len(cpf) - 1):
             aux += int(cpf[i]) * (11 - i)
 
-        if ((aux * 10) % 11 != int(cpf[10])):
+        resto = (aux * 10) % 11 
+
+        if resto == 10:
+            resto = 0
+
+        if (resto != int(cpf[10])):
+
             return False
+        print("Segundo Digito OK")
 
         return True
 
@@ -61,8 +72,7 @@ def is_valid_cpf(cpf):  # Only Numbers
 def age_validator(value):
     if age(value,date.today()) < 18:
         raise ValidationError(
-            _("%(value)s Idade Inválida ( menores de 18 anos não são aceitos )"),
-            params ={'value', value}
+            _("Idade Inválida ( menores de 18 anos não são aceitos )")
         )
 
 

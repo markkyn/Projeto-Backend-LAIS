@@ -6,8 +6,7 @@ from users.models import User
 def cpf_already_registered(cpf):
     if User.objects.filter(cpf = cpf).exists():
         raise ValidationError(
-            _("%(value)s Idade Inválida ( menores de 18 anos não são aceitos )"),
-            params ={'value', cpf}
+            _("Já existe um cadastro com esse CPF")
         )
     return False
     

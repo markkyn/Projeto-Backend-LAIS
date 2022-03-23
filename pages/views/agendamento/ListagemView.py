@@ -9,7 +9,7 @@ class ListagemView(View):
 
     def get(self,request):
         context = {
-            'agendamento': Agendamento.objects.all()
+            'agendamento': Agendamento.objects.filter(users  = request.user)
         }
 
         return render(request, self.template_name, context)

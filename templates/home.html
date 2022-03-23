@@ -1,35 +1,52 @@
 {% extends 'base.html' %}
 {% block title %}Página Inicial{% endblock %}
-{% block navItems %}
-    
-{% endblock %}
+{% block navItems %}{% endblock %}
 {% block content %}
     {% if user.is_authenticated %}
-        <div class="container">
-            <ul>
-                <li>Nome Completo: {{ user.full_name }}</li>
-                <li>Data de Nascimento: {{ user.date_of_birth }} ( {{ user.get_idade }} anos )</li>
-                <li>CPF: {{ user }}</li>
-                <li>Está apto para realizar agendamento: 
-                    {% if user.is_able_to_schedule %}
-                        Sim
-                    {% else %}
-                        Não
-                    {%endif%}        
-                </li>
-                <!-- A definicao de __str__ é o proprio CPF formatado -->
-            </ul>
-            {% if user.is_able_to_schedule %}
-                <a href="{% url 'pages:agendamento' %}" class="btn btn-primary">
-                    Realizar Agendamento
-                </a>
-            {% endif %}
-        </div>
-    {% else %}
-        <h2>Verificamos que você não está autenticado no nosso sistema</h2>
-        <div class="container">
-            <a href="{% url 'pages:login' %}" class = "btn btn-primary mx-auto">Entrar</a>
-            <a href="{% url 'pages:signup' %}" class= "btn btn-primary mx-auto">Cadastrar-se</a>
-        </div>
-    {% endif %}
-{% endblock %}
+        <div class="card" style="width: 20rem;">
+            <div class="card-body">
+                <h5 class="card-title">Informações de Usuário</h5>
+                <table class="table table-sm">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Nome Completo</th>
+                            <td>{{ user.full_name }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Data de Nascimento</th>
+                            <td>
+                                {{ user.date_of_birth }}
+                                <br>
+                                ( {{ user.get_idade }} anos )
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">CPF</th>
+                            <td colspan="2">{{ user }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Apto a realizar agendamento</th>
+                            <td>
+                                {% if user.is_able_to_schedule %}
+                                    Sim
+                                {% else %}
+                                    Não
+                                {% endif %}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer d-flex justify-content-center">
+                {% if user.is_able_to_schedule %}
+                    <a href="{% url 'pages:agendamento' %}" class="btn btn-primary ">Realizar Agendamento</a>
+                {% endif %}
+            </div>
+        {% else %}
+            <h2>Verificamos que você não está autenticado no nosso sistema</h2>
+            <div class="container d-flex justify-content-center">
+                <a href="{% url 'pages:login' %}" class = "btn btn-primary mx-1">Entrar</a>
+                <a href="{% url 'pages:signup' %}" class= "btn btn-primary mx-1">Cadastrar-se</a>
+            </div>
+        {% endif %}
+    {% endblock %}
