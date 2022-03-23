@@ -9,4 +9,6 @@ class EstabelecimentoAdmin(admin.ModelAdmin):
     list_filter = ('cnes', 'nome')
     search_fields = ['cnes', 'nome']
 
-admin.site.register(Agendamento)
+@admin.register(Agendamento)
+class AgendmentoAdmin(admin.ModelAdmin):
+    pass
