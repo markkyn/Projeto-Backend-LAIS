@@ -1,0 +1,161 @@
+[{
+        "model": "agendamento.Estabelecimento",
+        "pk": 1,
+        "fields": {
+            "cnes": 3154408,
+            "nome": "CLINICA DE ENDOCRINOLOGIA E PEDIATRIA"
+        }
+    },
+    {
+        "model": "agendamento.Estabelecimento",
+        "pk": 2,
+        "fields": {
+            "cnes": 3111601,
+            "nome": "CLINICA LUCILA CARVALHO"
+        }
+    },
+    {
+        "model": "agendamento.Estabelecimento",
+        "pk": 3,
+        "fields": {
+            "cnes": 3176339,
+            "nome": "J F FISIOTERAPIA"
+        }
+    },
+    {
+        "model": "agendamento.Estabelecimento",
+        "pk": 4,
+        "fields": {
+            "cnes": 3355926,
+            "nome": "PRO ANALISES"
+        }
+    },
+    {
+        "model": "agendamento.Estabelecimento",
+        "pk": 5,
+        "fields": {
+            "cnes": 3357325,
+            "nome": "URGENCIAS DO CORACAO"
+        }
+    },
+    {
+        "model": "agendamento.Estabelecimento",
+        "pk": 6,
+        "fields": {
+            "cnes": 3357368,
+            "nome": "SENACLIN"
+        }
+    },
+    {
+        "model": "agendamento.Estabelecimento",
+        "pk": 7,
+        "fields": {
+            "cnes": 3358488,
+            "nome": "CLINICA MARIA JULIETA"
+        }
+    },
+    {
+        "model": "agendamento.Estabelecimento",
+        "pk": 8,
+        "fields": {
+            "cnes": 6642284,
+            "nome": "CENTRO CLINICO UNIMED NAM"
+        }
+    },
+    {
+        "model": "agendamento.Estabelecimento",
+        "pk": 9,
+        "fields": {
+            "cnes": 3520668,
+            "nome": "CLINICA MEDICA NOVO HORIZONTE"
+        }
+    },
+    {
+        "model": "agendamento.Estabelecimento",
+        "pk": 10,
+        "fields": {
+            "cnes": 3521486,
+            "nome": "FISIO AR"
+        }
+    },
+    {
+        "model": "agendamento.Estabelecimento",
+        "pk": 11,
+        "fields": {
+            "cnes": 2656396,
+            "nome": "MULTILAB"
+        }
+    },
+    {
+        "model": "agendamento.Estabelecimento",
+        "pk": 12,
+        "fields": {
+            "cnes": 2656434,
+            "nome": "LAB FLEURY 2"
+        }
+    },
+    {
+        "model": "agendamento.Estabelecimento",
+        "pk": 13,
+        "fields": {
+            "cnes": 3396835,
+            "nome": "LABORATORIO DE CITOANALISES"
+        }
+    },
+    {
+        "model": "agendamento.Estabelecimento",
+        "pk": 14,
+        "fields": {
+            "cnes": 4013689,
+            "nome": "NATAL OTORRINO CENTER"
+        }
+    },
+    {
+        "model": "agendamento.Estabelecimento",
+        "pk": 15,
+        "fields": {
+            "cnes": 2656817,
+            "nome": "LABORATORIO ANALISES CLINICAS NATALENSE"
+        }
+    },
+    {
+        "model": "agendamento.Estabelecimento",
+        "pk": 16,
+        "fields": {
+            "cnes": 2656647,
+            "nome": "LABORANALISES"
+        }
+    },
+    {
+        "model": "agendamento.Estabelecimento",
+        "pk": 17,
+        "fields": {
+            "cnes": 2679574,
+            "nome": "NUCLEO DE OLHOS DE NATAL"
+        }
+    },
+    {
+        "model": "agendamento.Estabelecimento",
+        "pk": 18,
+        "fields": {
+            "cnes": 3082652,
+            "nome": "INSTITUTO DE REUMATOLOGIA"
+        }
+    },
+    {
+        "model": "agendamento.Estabelecimento",
+        "pk": 19,
+        "fields": {
+            "cnes": 2656426,
+            "nome": "SBLAC"
+        }
+    },
+    {
+        "model": "agendamento.Estabelecimento",
+        "pk": 20,
+        "fields": {
+            "cnes": 3273741,
+            "nome": "UNIVIDA"
+        }
+    }
+]
