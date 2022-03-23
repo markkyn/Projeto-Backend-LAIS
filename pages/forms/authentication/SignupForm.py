@@ -9,6 +9,12 @@ class SignupForm(UserCreationForm):
     full_name_Field = forms.CharField(
         label = "Nome Completo",
         required= True,
+        widget= forms.TextInput(
+            attrs= {
+                'class':'form-control',
+                'placeholder':'Seu Nome'
+            }
+        )
     )
 
     cpf_Field = forms.CharField(
@@ -16,7 +22,13 @@ class SignupForm(UserCreationForm):
         required= True,
         max_length=11,
         min_length=11,
-        validators= [cpf_validator, cpf_already_registered]
+        validators= [cpf_validator, cpf_already_registered],
+        widget= forms.TextInput(
+            attrs= {
+                'class':'form-control',
+                'placeholder':'11 Dígitos'
+            }
+        )
     )
 
     date_of_birth_Field = forms.DateField(
@@ -26,6 +38,7 @@ class SignupForm(UserCreationForm):
         widget= forms.DateInput(
             attrs={
                 'type': 'date',
+                'class': 'form-control'
             }
         )
     )
@@ -34,10 +47,16 @@ class SignupForm(UserCreationForm):
         label = "Grupo de Atendimento",
         queryset = Group.objects.filter(visivel = True),
         required = False,
+        widget= forms.SelectMultiple(
+            attrs= {
+                'class':'form-control',
+            }
+        ),
+        help_text = 'Pressione a tecla "SHIFT" ou "CTRL" para selecionar multiplos grupos (Campo não-obrigatório)'
     )
 
     had_covid_Field = forms.BooleanField(
-        label = "Teve COVID nos Últimos 30 dias?",
+        label = "Selecione caso você tenha sido diagnósticado com covid nos ultimos 30 dias",
         required=False
     )
 
@@ -48,6 +67,12 @@ class SignupForm(UserCreationForm):
         exclude = ('username',)
         fields = ['password1','password2']
 
+    def __init__(self, *args, **kwargs):
+        super(SignupForm, self).__init__(*args, **kwargs)
+
+        self.fields['password1'].widget.attrs['class'] = 'form-control'
+        self.fields['password2'].widget.attrs['class'] = 'form-control'
+    
     def register(self):
         new_user = User()
 

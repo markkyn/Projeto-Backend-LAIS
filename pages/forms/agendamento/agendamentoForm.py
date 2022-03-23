@@ -1,3 +1,4 @@
+from logging import PlaceHolder
 import re
 from urllib import request
 from django import forms
@@ -7,12 +8,24 @@ import datetime as dt
 class AgendamentoForm(forms.Form):
     estabelecimento_Field = forms.ModelChoiceField(
         label= "Estabelecimentos",
-        queryset=Estabelecimento.objects.all()
+        queryset=Estabelecimento.objects.all(),
+        widget= forms.Select(
+            attrs={
+                'class': 'form-control',
+            }
+        ),
+        empty_label= "Selecione um Estabelecimento"
     )
     
     horario_Field = forms.ModelChoiceField(
         label= "Horários Disponiveis",
-        queryset= Agendamento.objects.none()
+        queryset= Agendamento.objects.none(),
+        widget= forms.Select(
+            attrs={
+                'class': 'form-control',
+            }
+        ),
+        empty_label= "Verifique os Horários Disponíveis"
     )
 
     def agendar(self, request):
@@ -20,6 +33,7 @@ class AgendamentoForm(forms.Form):
         if 'estabelecimento_Field' in self.data:
             estabelecimento_id = int(self.data.get('estabelecimento_Field'))
             self.fields['horario_Field'].queryset = Agendamento.objects.filter(estabelecimento_id = estabelecimento_id)
+            
 
             horario_formatado = re.search(r'\((.*?)\)',self.data.get('horario_Field')).group(1)\
                 .split(sep=':')
