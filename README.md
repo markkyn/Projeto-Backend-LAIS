@@ -33,7 +33,7 @@ As orientações podem ser encontradas [aqui](https://lais.huol.ufrn.br/wp-conte
 
 - **Observação**: Não existem Agendamentos pré-definidos nesse projeto, portanto é necessária a criação manual ( o que corresponderia à adição de agendamento pelo próprio estabelecimento)
 	- Entre com o SuperUsuário em : **127.0.0.1:8000/login**
-	- Entre na URL:**127.0.0.1:8000/admin**
+	- Entre na URL: **127.0.0.1:8000/admin**
 	- Vá em Agendamentos e crie um Agendamento em um Estabelecimento qualquer.
 	
 
