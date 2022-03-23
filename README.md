@@ -9,25 +9,33 @@ As orientações podem ser encontradas [aqui](https://lais.huol.ufrn.br/wp-conte
 # 🔧 Instalação
 ### Instalação de Ambiente Virtual
 - Baixe esse repositório e Entre no diretório respectivo
-- Utilize um VirtualEnvironment
+- Utilize um VirtualEnvironment<br>
 `python -m venv venv`
-- Instale as dependências necessárias
+- Instale as dependências necessárias<br>
 `pip install -r requirements.txt`
 
 ### Passos Iniciais para Funcionamento do Projeto
- - Crie e Execute de migrations para o banco de dados
-`python ./manage.py makemigrations`
+ - Crie e Execute de migrations para o banco de dados<br>
+`python ./manage.py makemigrations`<br>
 `python ./manage.py migrate`
 
-- É recomendado criar um SuperUsuário, mas não obrigatório
+- É necessário criar um SuperUsuário<br>
 `python ./manage.py createsuperuser`
 	- Dados necessários:
 		- CPF Válido ( [Gerador de CPF](https://www.4devs.com.br/gerador_de_cpf) )
 		- Data de Nascimento
 		- Senha
-- Carrege os dados de Grupos e Estabelecimentos
-`python ./manage.py loaddata grupos_de_atendimento.json`
+- Carrege os dados de Grupos e Estabelecimentos<br>
+`python ./manage.py loaddata grupos_de_atendimento.json`<br>
 `python ./manage.py add_estabelecimentos`
+- Agora é so iniciar o servidor<br>
+	`python .manage.py runserver`
+
+- **Observação**: Não existem Agendamentos pré-definidos nesse projeto, portanto é necessária a criação manual ( o que corresponderia à adição de agendamento pelo próprio estabelecimento)
+	- Entre com o SuperUsuário em : **127.0.0.1:8000/login**
+	- Entre na URL:**127.0.0.1:8000/admin**
+	- Vá em Agendamentos e crie um Agendamento em um Estabelecimento qualquer.
+	
 
 # Informações sobre o Projeto:
 ## URL's
