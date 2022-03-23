@@ -34,7 +34,6 @@ class SignupForm(UserCreationForm):
     date_of_birth_Field = forms.DateField(
         label= "Data de Nascimento",
         required= True,
-        validators= [age_validator],
         widget= forms.DateInput(
             attrs={
                 'type': 'date',

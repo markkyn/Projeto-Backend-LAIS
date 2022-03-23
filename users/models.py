@@ -72,7 +72,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     date_of_birth = models.DateField(
         verbose_name = "Data de Nascimento",
         null=True,
-        validators=[ age_validator ]
     )
 
     had_covid_last_month = models.BooleanField(
