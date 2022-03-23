@@ -2,6 +2,13 @@
 {% block title %}Página Inicial{% endblock %}
 {% block navItems %}{% endblock %}
 {% block content %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success container" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
     {% if user.is_authenticated %}
         <div class="card" style="width: 20rem;">
             <div class="card-body">
