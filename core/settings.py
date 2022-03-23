@@ -26,13 +26,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core',
     # Built-In Django Apps
     'django.contrib.sitemaps',
 
     # MyApps
     'users.apps.UsersConfig',
-    'agendamento.apps.AgendamentoConfig'
+    'agendamento.apps.AgendamentoConfig',
+    'pages.apps.PagesConfig',
+    'core', # <= Adicionado para funcionamento de Command
 ]
 
 MIDDLEWARE = [

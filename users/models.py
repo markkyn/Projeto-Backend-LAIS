@@ -17,7 +17,7 @@ class UserManager(BaseUserManager):
         )
 
         user.set_password(password)
-        user.save()
+        user.save(using = self._db)
 
         return user
 
@@ -94,7 +94,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     # Used by Admin.site.register (Admin Panel)
     is_staff = models.BooleanField(default=False)
-    is_active = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
 
     objects = UserManager()
 

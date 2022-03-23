@@ -1,14 +1,8 @@
-from django.urls import path, include
-
-from .views.authentication.HomeView import HomeView
-from .views.authentication.SignupView import SignupView
-from .views.authentication.LoginView import LoginView, LogoutView
-
-from .views.agendamento.AgendamentoView import AgendamentoView
-from .views.agendamento.ListagemView import ListagemView
-
-from .views.utils import dropdownView
+from django.urls import path
 from django.contrib.auth.decorators import login_required
+
+from .views import LogoutView, LoginView, SignupView, HomeView, dropdownView
+from agendamento.views import AgendamentoView, ListagemView
 
 app_name = 'pages'
 
